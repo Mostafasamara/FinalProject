@@ -15,7 +15,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # ✅ Backend API URL (Update to match your Django backend)
-API_BASE_URL = "http://127.0.0.1:8000/api/users/"
+API_BASE_URL = "https://student-performance1-g9xc6kf5i-mostafasamaras-projects.vercel.app/api/users/"
 
 # ✅ Initialize session state
 if "auth_token" not in st.session_state:
@@ -48,7 +48,7 @@ with st.sidebar:
             st.rerun()
 
 # ✅ Page Routing Logic
-API_PREDICT_URL = "http://127.0.0.1:8000/api/predictor/predict/"
+API_PREDICT_URL = "https://student-performance1-g9xc6kf5i-mostafasamaras-projects.vercel.app/api/predictor/predict/"
 
 # In the page routing logic
 if st.session_state["page"] == "dashboard" and is_authenticated:
