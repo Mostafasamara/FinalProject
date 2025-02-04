@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+u5pn7z(1uj#6(01x4pe4z=7s21p7vs$&+_8&t+t388(k7!olp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
+
 
 
 # Application definition
@@ -52,6 +53,8 @@ INSTALLED_APPS = [
     # Custom apps
     'users',
     'predictor',
+    'django.contrib.staticfiles',  # Ensure static files are included
+    'whitenoise.runserver_nostatic',  # Add this for better static handling
 ]
 
 
@@ -83,8 +86,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add Whitenoise
 
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 ROOT_URLCONF = 'student_performance1.urls'
 
