@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "vercel-build": "cmd /c build.bat"
+  }
+}
