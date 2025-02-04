@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-+u5pn7z(1uj#6(01x4pe4z=7s21p7vs$&+_8&t+t388(k7!olp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = [
+    'student-performance1-yourname.vercel.app',
+    '.vercel.app',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 
@@ -38,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # Third-party apps
     'rest_framework',
     'rest_framework.authtoken',
@@ -53,7 +59,6 @@ INSTALLED_APPS = [
     # Custom apps
     'users',
     'predictor',
-    'django.contrib.staticfiles',  # Ensure static files are included
     'whitenoise.runserver_nostatic',  # Add this for better static handling
 ]
 
