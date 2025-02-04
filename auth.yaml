@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    student1:
+      email: student1@example.com
+      name: Student One
+      password: "$2b$12$y4xF7lLX5XZ8FJZ3X/qP9udVoOWQUAIq3/rZn6w3ehH9Gt/MhEi2m"
+      role: student
+    professor1:
+      email: professor1@example.com
+      name: Professor One
+      password: "$2b$12$QO/oLrRjxyP6XcIhZCxDAehVGB28oW5ycmhV7MK/5T/1Tj0Rz5d1S"
+      role: professor
+
+cookie:
+  expiry_days: 30
+  key: "random_key_here"
+  name: "auth_cookie"
