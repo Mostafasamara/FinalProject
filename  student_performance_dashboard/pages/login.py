@@ -4,7 +4,7 @@ import requests
 st.set_page_config(page_title="Login", layout="wide")
 
 # Backend API URL for Login
-API_LOGIN_URL = "https://student-performance1-g9xc6kf5i-mostafasamaras-projects.vercel.app/api/users/login/"
+API_LOGIN_URL = "http://127.0.0.1:8000/api/users/login/"
 
 st.title("Login")
 email = st.text_input("Email")

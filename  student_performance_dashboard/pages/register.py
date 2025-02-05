@@ -4,7 +4,7 @@ import requests
 st.set_page_config(page_title="Register", layout="wide")
 
 # Backend API URL for registration
-API_REGISTER_URL = "https://student-performance1-g9xc6kf5i-mostafasamaras-projects.vercel.app/api/users/register/"
+API_REGISTER_URL = "http://127.0.0.1:8000/api/users/register/"
 
 st.title("Register")
 username = st.text_input("Username")
