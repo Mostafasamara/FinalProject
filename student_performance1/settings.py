@@ -32,7 +32,8 @@ DEBUG = True
 #     # and renames the files with unique names for each version to support long-term caching
 #     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = [ '*' ]
+ALLOWED_HOSTS = ["finalproject-production-171c.up.railway.app", "localhost", "127.0.0.1"]
+
     # 'student-performance1-yourname.vercel.app',
     # '.vercel.app',
     # 'localhost',
