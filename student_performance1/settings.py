@@ -132,16 +132,23 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'student_performance_db',  # Your database name
-        'USER': 'postgres',  # Your PostgreSQL username
-        'PASSWORD': 'Mo-0193694967#',  # Your PostgreSQL password
-        'HOST': 'localhost',  # Keep as localhost for local development
-        'PORT': '5432',  # Default PostgreSQL port
+DATABASE_URL = os.getenv("DATABASE_URL")  # Fetch the database URL from environment
+
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.config(default=DATABASE_URL)
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'student_performance_db',
+            'USER': 'postgres',
+            'PASSWORD': 'Mo-0193694967#',  # Replace with actual password
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
