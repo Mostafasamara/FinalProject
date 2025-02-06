@@ -133,7 +133,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
-DATABASE_URL = os.getenv("DATABASE_URL")  # Fetch the database URL from environment
+DATABASE_URL = os.getenv("postgresql://postgres:rkBhPddAUbxsZuhHGuVvHtbRIjVUORAl@postgres.railway.internal:5432/railway")  # Fetch the database URL from environment
 
 if DATABASE_URL:
     DATABASES = {
