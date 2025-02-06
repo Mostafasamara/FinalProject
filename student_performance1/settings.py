@@ -135,17 +135,19 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASE_URL = os.getenv("postgresql://postgres:rkBhPddAUbxsZuhHGuVvHtbRIjVUORAl@postgres.railway.internal:5432/railway")  # Fetch the database URL from environment
 
+DATABASE_URL = os.getenv("DATABASE_URL")
+
 if DATABASE_URL:
     DATABASES = {
-        'default': dj_database_url.config(default=DATABASE_URL)
+        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
     }
 else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'student_performance_db',
+            'NAME': 'student_performance_db',  # Default local DB name
             'USER': 'postgres',
-            'PASSWORD': 'Mo-0193694967#',  # Replace with actual password
+            'PASSWORD': 'Mo-0193694967#',
             'HOST': 'localhost',
             'PORT': '5432',
         }
